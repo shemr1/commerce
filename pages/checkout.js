@@ -320,14 +320,14 @@ export default function Checkout() {
 							</div>
 							<div className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
 								Subtotal
-								<span className="ml-2">{subtotal.formatted_with_symbol}</span>
+								<span className="ml-2"></span>
 							</div>
 							<div className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
 								Shipping Tax<span className="ml-2">$10</span>
 							</div>
 							<div className="flex items-center w-full py-4 text-sm font-semibold border-b border-gray-300 lg:py-5 lg:px-3 text-heading last:border-b-0 last:text-base last:pb-0">
 								Total
-								<span className="ml-2">{subtotal.formatted_with_symbol}</span>
+								<span className="ml-2"></span>
 							</div>
 						</div>
 					</div>
