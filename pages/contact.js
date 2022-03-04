@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function Contact() {
-	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
