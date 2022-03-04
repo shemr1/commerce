@@ -18,22 +18,26 @@ function Contact() {
 			[name]: value,
 		});
 	};
-	const send = (form) => {
-		const msg = {
-			to: "test@example.com", // Change to your recipient
-			from: form.email, // Change to your verified sender
-			subject: "Contact",
-			text: form.message,
-			html: "<strong>sent with send grid</strong>",
-		};
-		sgMail
-			.send(msg)
-			.then(() => {
-				console.log("Email sent");
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+	const send = async (form) => {
+		const res = await fetch("/api/sendgrid", {
+			body: JSON.stringify({
+				email: form.email,
+				fullname: form.name,
+
+				message: form.message,
+			}),
+			headers: {
+				"Content-Type": "application/json",
+			},
+			method: "POST",
+		});
+
+		const { error } = await res.json();
+		if (error) {
+			console.log(error);
+			return;
+		}
+		console.log(fullname, email, subject, message);
 	};
 
 	const handleSubmit = (e) => {
