@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-const sgMail = require("@sendgrid/mail");
 
 function Contact() {
 	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
