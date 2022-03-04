@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { signIn, useSession, getProviders } from "next-auth/react";
 
-let getToken = function () {
-	return commerce.checkout
-		.generateTokenFrom("cart", commerce.cart.id())
-		.then((response) => console.log(response.id));
+let getToken = async function () {
+	const response = await commerce.checkout.generateTokenFrom(
+		"cart",
+		commerce.cart.id(),
+	);
+	return console.log(response.id);
 };
 
 export default function Checkout() {
