@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { signIn, useSession, getProviders } from "next-auth/react";
 
 export default function Login({ providers }) {
@@ -119,6 +122,27 @@ export default function Login({ providers }) {
 							</button>
 						</div>
 					</form>
+					<hr />
+					<div className="grid gap-4 grid-cols-3">
+						<button
+							onClick={() => signIn("google")}
+							className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+						>
+							Google
+						</button>
+						<button
+							onClick={() => signIn("github")}
+							className="bg-neutral-500 hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded"
+						>
+							Github
+						</button>
+						<button
+							onClick={() => signIn("twitter")}
+							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+						>
+							Twitter
+						</button>
+					</div>
 				</div>
 			</div>
 		</>

@@ -133,16 +133,18 @@ const Navbar = () => {
 		return (
 			<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-black">
 				<div className="container flex flex-wrap justify-between items-center mx-auto">
-					<a href="#" className="flex items-center">
-						<img
-							src="/logo.png"
-							className="mr-3 h-6 sm:h-10"
-							alt="Brishnell Logo"
-						/>
-						<span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-							B.H.O.F
-						</span>
-					</a>
+					<Link href="/">
+						<a href="#" className="flex items-center">
+							<img
+								src="/logo.png"
+								className="mr-3 h-6 sm:h-10"
+								alt="Brishnell Logo"
+							/>
+							<span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+								B.H.O.F
+							</span>
+						</a>
+					</Link>
 					<div className="flex items-center md:order-2 gap-4">
 						<Link href="/cart">
 							<a>
@@ -162,23 +164,18 @@ const Navbar = () => {
 								</svg>
 							</a>
 						</Link>
-						<Link href="/products">
+						<Link href="/Profile">
 							<a
 								type="button"
 								className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-								id="user-menu-button"
-								aria-expanded="false"
-								data-dropdown-toggle="dropdown"
 							>
 								<span className="sr-only">Open user menu</span>
 								<img
 									className="w-8 h-8 rounded-full"
 									src={
-										session.data.user.image === "" ? (
-											session.data.user.image
-										) : (
-											<Avatar name={session.data.user.name} />
-										)
+										session.data.user.image === ""
+											? "/default.jpg"
+											: session.user.image
 									}
 									alt={session.data.user.image.length}
 								/>
@@ -226,20 +223,14 @@ const Navbar = () => {
 						<ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 							<Link href="/">
 								<li>
-									<a
-										href="#"
-										className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-									>
+									<a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
 										Home
 									</a>
 								</li>
 							</Link>
 							<Link href="/categories">
 								<li>
-									<a
-										href="#"
-										className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-									>
+									<a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
 										Category
 									</a>
 								</li>
@@ -256,10 +247,7 @@ const Navbar = () => {
 							</Link>
 							<Link href="/about">
 								<li>
-									<a
-										href="#"
-										className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-									>
+									<a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
 										About
 									</a>
 								</li>
@@ -267,10 +255,7 @@ const Navbar = () => {
 
 							<Link href="/contact">
 								<li>
-									<a
-										href="#"
-										className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-									>
+									<a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
 										Contact
 									</a>
 								</li>
