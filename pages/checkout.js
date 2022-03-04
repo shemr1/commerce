@@ -5,11 +5,15 @@ import { useRouter } from "next/router";
 import { signIn, useSession, getProviders } from "next-auth/react";
 
 let getToken = async function () {
-	const response = await commerce.checkout.generateTokenFrom(
-		"cart",
-		commerce.cart.id(),
-	);
-	return console.log(response.id);
+	try {
+		const response = await commerce.checkout.generateTokenFrom(
+			"cart",
+			commerce.cart.id(),
+		);
+		return console.log(response.id);
+	} catch (err) {
+		console.log(err.message);
+	}
 };
 
 export default function Checkout() {
